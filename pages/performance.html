@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Performance — Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Performance page styles -->
+  <link rel="stylesheet" href="../css/pages/performance.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Page header: section title left, site logo centre, right column empty to keep logo truly centred -->
+    <div class="page-header">
+      <img
+        src="../assets/images/hub/nav_performance.png"
+        class="page-title"
+        alt="Performance"
+      >
+      <a href="../hub.html" class="site-logo-link" aria-label="Back to Emmylou's World">
+        <img
+          src="../assets/images/hub/emmylous_world_logo.png"
+          alt="Emmylou's World"
+        >
+      </a>
+      <!-- Right column intentionally empty to balance the 3-column header grid -->
+      <div></div>
+    </div>
+
+    <!-- Performance works grid. Two columns, captions below each image.
+         Image-to-work mapping is approximate — verify in Stage 4. -->
+    <div class="performance-grid">
+
+      <!-- Bedroom Piece, 2022 — opens full image in lightbox -->
+      <a href="#" class="performance-item lightbox-trigger" data-src="../assets/images/performance/bedroom_piece.jpg">
+        <img
+          src="../assets/images/performance/bedroom_piece.jpg"
+          alt="Bedroom Piece"
+          loading="lazy"
+        >
+        <p class="caption">Bedroom Piece, 2022.</p>
+      </a>
+
+      <!-- Wedding, 2023 — opens full image in lightbox -->
+      <a href="#" class="performance-item lightbox-trigger" data-src="../assets/images/performance/wedding.jpg">
+        <img
+          src="../assets/images/performance/wedding.jpg"
+          alt="Wedding"
+          loading="lazy"
+        >
+        <p class="caption">Wedding, 2023.</p>
+      </a>
+
+      <!-- Recess, 2024 — opens full image in lightbox -->
+      <a href="#" class="performance-item lightbox-trigger" data-src="../assets/images/performance/recess.png">
+        <img
+          src="../assets/images/performance/recess.png"
+          alt="Recess"
+          loading="lazy"
+        >
+        <p class="caption">Recess, 2024.</p>
+      </a>
+
+      <!-- Fluxus Class, 2025 — links to full sub-page (4 workbook spreads + text) -->
+      <a href="fluxus-class.html" class="performance-item">
+        <img
+          src="../assets/images/performance/fluxus_class.png"
+          alt="Fluxus Class"
+          loading="lazy"
+        >
+        <p class="caption">Fluxus Class, 2025.</p>
+      </a>
+
+      <!-- Jack and Allen Play Chess, 2025 — popup trigger (popup.js wired in a later stage) -->
+      <div class="performance-item">
+        <img
+          src="../assets/images/performance/jack_and_allen.png"
+          alt="Jack and Allen Play Chess"
+          loading="lazy"
+        >
+        <p class="caption">Jack and Allen Play Chess, 2025.</p>
+      </div>
+
+      <!-- Hole, 2025 — popup trigger (popup.js wired in a later stage) -->
+      <div class="performance-item">
+        <img
+          src="../assets/images/performance/hole.jpg"
+          alt="Hole"
+          loading="lazy"
+        >
+        <p class="caption">Hole, 2025.</p>
+      </div>
+
+      <!-- Jeans Funeral, 2025 — popup trigger (popup.js wired in a later stage) -->
+      <div class="performance-item">
+        <img
+          src="../assets/images/performance/jeans_funeral.jpg"
+          alt="Jeans Funeral"
+          loading="lazy"
+        >
+        <p class="caption">Jeans Funeral, 2025.</p>
+        <p class="caption">100% cotton jeans, shovel, sticks, wool, dirt.</p>
+      </div>
+
+    </div><!-- /.performance-grid -->
+
+  </div><!-- /.page -->
+
+  <!-- Lightbox overlay — hidden until an image is clicked -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+    <img src="" alt="">
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/lightbox.js"></script>
+</body>
+</html>

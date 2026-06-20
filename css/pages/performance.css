@@ -1,0 +1,91 @@
+/* Performance page styles */
+
+/* -------------------------------------------------------
+   Page header: section title left, site logo centred.
+   Same 3-column grid pattern used on all section pages.
+------------------------------------------------------- */
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+.page-title {
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.site-logo-link {
+  display: block;
+}
+
+.site-logo-link img {
+  width: clamp(400px, 44vw, 760px);
+  height: auto;
+}
+
+.site-logo-link:hover {
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------
+   Performance works grid
+   Two columns; align-items: start so images of different
+   heights don't force each row cell to stretch.
+------------------------------------------------------- */
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg) var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-md) var(--space-md) var(--space-xl);
+  align-items: start;
+}
+
+/* Each work: image + caption(s) below */
+.performance-item {
+  display: block;
+}
+
+.performance-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.performance-item .caption {
+  margin-top: 0.5rem;
+}
+
+/* Clickable works: dim slightly on hover without degrading the image */
+a.performance-item:hover {
+  opacity: 0.85;
+}
+
+/* Lightbox trigger: zoom cursor on image to signal clickability */
+a.performance-item.lightbox-trigger img {
+  cursor: zoom-in;
+}
+
+/* -------------------------------------------------------
+   Responsive: single column on narrow screens
+------------------------------------------------------- */
+@media (max-width: 700px) {
+  .page-header {
+    padding: var(--space-sm);
+  }
+
+  .page-title {
+    height: 60px;
+  }
+
+  .performance-grid {
+    grid-template-columns: 1fr;
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    gap: var(--space-md);
+  }
+}

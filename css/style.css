@@ -71,7 +71,7 @@ a:hover { opacity: 0.7; }
 
 /* Small white caption text. Used on Performance page and anywhere else captions appear. */
 .caption {
-  font-size: var(--text-xs);
+  font-size: 1.25rem;
   font-weight: var(--weight-light);
   color: var(--white);
 }
