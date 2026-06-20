@@ -1,9 +1,5 @@
-# Claude Code — do not publish to GitHub
+# CC
 .claude/
-.claude.local.md
-**/CLAUDE.md
-links.md
-arborescence.md
 arborescence.html
 arborescence/
 screenshots-temp/
@@ -15,3 +11,7 @@ node_modules/
 # Python
 __pycache__/
 *.pyc
+
+old/
+*.md
+!README.md

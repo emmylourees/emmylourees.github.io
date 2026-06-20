@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* -------------------------------------------------------
+       Splash page styles
+       The whole page is one big clickable link to the hub.
+    ------------------------------------------------------- */
+
+    /* Make the link fill the full viewport */
+    .splash-link {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* Flex container: center the three images horizontally */
+    .page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      /* Some breathing room above and below on small screens */
+      padding: 4vh 2vw;
+      gap: 2vw;
+    }
+
+    /* Each image scales down on narrow screens */
+    .splash-figure {
+      width: clamp(80px, 15vw, 220px);
+      height: auto;
+    }
+
+    .splash-title {
+      width: clamp(140px, 25vw, 380px);
+      height: auto;
+    }
+
+    /* Cursor hint */
+    .splash-link {
+      cursor: pointer;
+    }
+
+    /* Override the global a:hover opacity — whole-page link shouldn't dim */
+    .splash-link:hover {
+      opacity: 1;
+    }
+
+    /* Respect reduced-motion preference: skip the fade-in */
+    @media (prefers-reduced-motion: reduce) {
+      body {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    The entire page is wrapped in a single link.
+    Clicking anywhere takes you to the hub.
+  -->
+  <a href="hub.html" class="splash-link" aria-label="Enter Emmylou's World">
+
+    <div class="page">
+
+      <!-- Left figure: person with arms raised, wearing "I'M A STAR" shirt -->
+      <img
+        class="splash-figure"
+        src="assets/images/splash/splash_img_1.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <!-- Centre: hand-lettered title "WELCOME TO EMMYLOU'S WORLD" -->
+      <img
+        class="splash-title"
+        src="assets/images/splash/splash_img_0.png"
+        alt="Welcome to Emmylou's World"
+      >
+
+      <!-- Right figure: person pointing upward, wearing "I'M A PUNK" shirt -->
+      <img
+        class="splash-figure"
+        src="assets/images/splash/splash_img_2.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+    </div>
+
+  </a>
+
+</body>
+</html>
