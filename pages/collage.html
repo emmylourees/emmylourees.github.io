@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Collage — Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Collage page styles -->
+  <link rel="stylesheet" href="../css/pages/collage.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Page header: section title left, site logo centre, right column empty to keep logo truly centred -->
+    <div class="page-header">
+      <img
+        src="../assets/images/hub/emmylous_world_img_3.png"
+        class="page-title"
+        alt="Collage"
+      >
+      <a href="../hub.html" class="site-logo-link" aria-label="Back to Emmylou's World">
+        <img
+          src="../assets/images/hub/emmylous_world_img_0.png"
+          alt="Emmylou's World"
+        >
+      </a>
+      <!-- Right column is intentionally empty to balance the 3-column header grid -->
+      <div></div>
+    </div>
+
+    <!-- Collage gallery. All 4 images open full-size in the lightbox when clicked. -->
+    <!-- data-rotate tells main.js to apply a random tilt (3–10 degrees either direction). -->
+    <div class="collage-gallery">
+
+      <!-- Image 1: flowers, fruit, figurines, reclining figure (upper-left position) -->
+      <a href="#" class="collage-item lightbox-trigger" data-src="../assets/images/collage/collage_img_0.jpg">
+        <img
+          src="../assets/images/collage/collage_img_0.jpg"
+          alt="Collage artwork"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- Image 2: colourful objects, conical forms (upper-right position) -->
+      <a href="#" class="collage-item lightbox-trigger" data-src="../assets/images/collage/collage_img_1.jpg">
+        <img
+          src="../assets/images/collage/collage_img_1.jpg"
+          alt="Collage artwork"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- Image 3: outdoor scene, people, yellow structure (lower-left position) -->
+      <a href="#" class="collage-item lightbox-trigger" data-src="../assets/images/collage/collage_img_2.jpg">
+        <img
+          src="../assets/images/collage/collage_img_2.jpg"
+          alt="Collage artwork"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- Image 4: warm amber light, figures, architectural interior (lower-right position) -->
+      <a href="#" class="collage-item lightbox-trigger" data-src="../assets/images/collage/collage_img_3.png">
+        <img
+          src="../assets/images/collage/collage_img_3.png"
+          alt="Collage artwork"
+          loading="lazy"
+        >
+      </a>
+
+    </div><!-- /.collage-gallery -->
+
+  </div><!-- /.page -->
+
+  <!-- Lightbox overlay — hidden until an image is clicked -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+    <img src="" alt="">
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/lightbox.js"></script>
+
+  <!-- Paired rotation: images 1&2 mirror directions, images 3&4 mirror directions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var imgs = document.querySelectorAll('.collage-gallery .collage-item img');
+      function randDeg() { return (Math.random() * 7 + 3).toFixed(2); }
+
+      var d1 = randDeg(), d2 = randDeg(), d3 = randDeg(), d4 = randDeg();
+      // Pair A (images 1 & 2): image 1 picks a sign, image 2 gets the opposite
+      var signA = Math.random() < 0.5 ? 1 : -1;
+      imgs[0].style.transform = 'rotate(' + (signA * d1) + 'deg)';
+      imgs[1].style.transform = 'rotate(' + (-signA * d2) + 'deg)';
+
+      // Pair B (images 3 & 4): same rule
+      var signB = Math.random() < 0.5 ? 1 : -1;
+      imgs[2].style.transform = 'rotate(' + (signB * d3) + 'deg)';
+      imgs[3].style.transform = 'rotate(' + (-signB * d4) + 'deg)';
+    });
+  </script>
+</body>
+</html>

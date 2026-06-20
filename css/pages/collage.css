@@ -1,0 +1,118 @@
+/* Collage page styles */
+
+/* -------------------------------------------------------
+   Page header: section title left, site logo centred.
+   Copied from the shared section-page pattern in design-system.md.
+   Logo must be width-constrained — the Emmylou's World image is
+   very wide and overflows if you try to constrain it by height.
+------------------------------------------------------- */
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+.page-title {
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.site-logo-link {
+  display: block;
+}
+
+.site-logo-link img {
+  width: clamp(400px, 44vw, 760px);
+  height: auto;
+}
+
+.site-logo-link:hover {
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------
+   Collage gallery
+   2x2 grid with generous sizing so each image feels large.
+   Images are intentionally offset with margin nudges to
+   break the rigid grid structure — a loose, scattered feel
+   without using absolute positioning.
+   Rotations are applied by JS (data-rotate attribute).
+------------------------------------------------------- */
+.collage-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Each cell holds one image and its lightbox trigger link */
+.collage-item {
+  display: block;
+}
+
+.collage-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Hover: dim slightly to signal clickability, but not so much it degrades the artwork */
+.collage-item:hover {
+  opacity: 0.88;
+}
+
+/* -------------------------------------------------------
+   Vertical offset nudges — each image shifted a bit to
+   break the perfect grid alignment, referencing the loose
+   placement of the original site.
+------------------------------------------------------- */
+.collage-item:nth-child(1) {
+  margin-top: 0;
+}
+
+.collage-item:nth-child(2) {
+  margin-top: var(--space-lg); /* pushed down relative to item 1 */
+}
+
+.collage-item:nth-child(3) {
+  margin-top: calc(var(--space-lg) * -0.5); /* pulled up slightly */
+}
+
+.collage-item:nth-child(4) {
+  margin-top: var(--space-md); /* a gentle drop */
+}
+
+/* -------------------------------------------------------
+   Responsive: single column on smaller screens.
+   Offsets are removed at that point — stacked layout
+   doesn't need the scatter treatment.
+------------------------------------------------------- */
+@media (max-width: 700px) {
+  .page-header {
+    padding: var(--space-sm);
+  }
+
+  .page-title {
+    height: 60px;
+  }
+
+  .collage-gallery {
+    grid-template-columns: 1fr;
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    gap: var(--space-md);
+  }
+
+  /* Reset all offsets on single-column layout */
+  .collage-item:nth-child(1),
+  .collage-item:nth-child(2),
+  .collage-item:nth-child(3),
+  .collage-item:nth-child(4) {
+    margin-top: 0;
+  }
+}
