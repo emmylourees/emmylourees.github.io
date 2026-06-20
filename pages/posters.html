@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Posters — Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Posters page styles -->
+  <link rel="stylesheet" href="../css/pages/posters.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Page header: section title left, site logo centre -->
+    <div class="page-header">
+      <img
+        src="../assets/images/hub/emmylous_world_img_2.png"
+        class="page-title"
+        alt="Posters"
+      >
+      <a href="../hub.html" class="site-logo-link" aria-label="Back to Emmylou's World">
+        <img
+          src="../assets/images/hub/emmylous_world_img_0.png"
+          alt="Emmylou's World"
+        >
+      </a>
+    </div>
+
+    <!-- Poster grid. Thumbnails load immediately; full-size only loads when clicked. -->
+    <div class="posters-grid">
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/marontate_poster_img_0.jpg">
+        <img src="../assets/images/posters/posters_bg_0.jpg" alt="Lucy's Delirium, Marontate, Roxanne Izzo poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/birds_poster_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_2.jpg" alt="Frown Line, Birds of Prrrey, Hole in Heaven poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/clay_poster_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_0.png" alt="Clay Hazey, Letchi, KT and Adam poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/emmylouposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_6.jpg" alt="Emmylou Rees and Salty Thumb poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/roslynposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_1.jpg" alt="Roslyn Hoppe, Rachella Wred, Catbug the Popstar poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/milkposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_3.jpg" alt="Mafuba, Dirty Milk, Louis Cza and Evy poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/goegeposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_4.jpg" alt="Mafuba and The Chris George Project poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/mayaposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_5.jpg" alt="Rachella Wred, Maya Lucina, Aaron Wylder poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/samposter_img_0.jpg">
+        <img src="../assets/images/posters/posters_img_7.jpg" alt="Sam Ripat, Rachella Wred, Danny Pretzel, P'tit Ours poster" loading="lazy">
+      </a>
+
+      <a href="#" class="lightbox-trigger" data-src="../assets/images/posters/cajunposter_img_0.png">
+        <img src="../assets/images/posters/posters_img_8.png" alt="Cajun Dance and Open Jam poster" loading="lazy">
+      </a>
+
+    </div><!-- /.posters-grid -->
+
+  </div><!-- /.page -->
+
+  <!-- Lightbox overlay — hidden until a poster is clicked -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+    <img src="" alt="">
+  </div>
+
+  <!-- Lightbox open/close logic -->
+  <script src="../js/lightbox.js"></script>
+</body>
+</html>

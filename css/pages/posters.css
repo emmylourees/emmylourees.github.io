@@ -1,0 +1,91 @@
+/* Posters page styles */
+
+/* -------------------------------------------------------
+   Page header: section title left, site logo centred.
+   Logo must be width-constrained — the Emmylou's World
+   image is very wide and overflows if you set its height.
+------------------------------------------------------- */
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+.page-title {
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.site-logo-link {
+  display: block;
+}
+
+.site-logo-link img {
+  width: clamp(400px, 44vw, 760px);
+  height: auto;
+}
+
+.site-logo-link:hover {
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------
+   Poster grid
+   4 columns by default, left-aligned, capped at 1150px.
+   Images show at natural proportions (no cropping).
+------------------------------------------------------- */
+.posters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 1300px;
+  padding: var(--space-sm) var(--space-md) var(--space-lg);
+}
+
+.posters-grid a {
+  display: block;
+}
+
+.posters-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+}
+
+.posters-grid a:hover {
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------
+   Responsive
+------------------------------------------------------- */
+@media (max-width: 900px) {
+  .posters-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .page-header {
+    padding: var(--space-sm);
+  }
+
+  .page-title {
+    height: 60px;
+  }
+
+  .posters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-sm);
+  }
+}
+
+@media (max-width: 380px) {
+  .posters-grid {
+    grid-template-columns: 1fr;
+  }
+}
