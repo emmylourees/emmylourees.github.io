@@ -49,7 +49,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   padding: var(--space-md);
   padding-bottom: 30vh;
 }
