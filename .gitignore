@@ -1,10 +1,12 @@
 # Claude Code — do not publish to GitHub
 .claude/
+.claude.local.md
 **/CLAUDE.md
 links.md
 arborescence.md
 arborescence.html
 arborescence/
+screenshots-temp/
 
 # Audit scripts (local tooling only)
 audit/
