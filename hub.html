@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Hub page styles -->
+  <link rel="stylesheet" href="css/pages/hub.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Hand-lettered title: "EMMYLOU'S WORLD" — links back to this page as the site logo -->
+    <a href="hub.html" class="hub-logo hub-title">
+      <img
+        src="assets/images/hub/emmylous_world_img_0.png"
+        alt="Emmylou's World"
+      >
+    </a>
+
+    <!-- Flex row: nav list on left, portrait on right -->
+    <div class="hub-inner">
+
+      <!-- Navigation list — all links are hand-lettered images -->
+      <nav aria-label="Main navigation">
+        <ul class="hub-nav">
+
+          <li>
+            <a href="pages/about.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_4.png"
+                alt="About"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/collage.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_3.png"
+                alt="Collage"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/performance.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_5.png"
+                alt="Performance"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/posters.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_2.png"
+                alt="Posters"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/zines.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_6.png"
+                alt="Zines"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+          <li>
+            <a href="pages/music.html">
+              <img
+                class="hub-nav-img"
+                src="assets/images/hub/emmylous_world_img_7.png"
+                alt="Music"
+                loading="lazy"
+              >
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <!-- Illustrated portrait of Emmylou. Gets a gentle random rotation on load. -->
+      <img
+        class="hub-portrait"
+        src="assets/images/hub/emmylous_world_img_1.png"
+        alt="Portrait of Emmylou"
+        loading="lazy"
+        data-rotate
+      >
+
+    </div><!-- /.hub-inner -->
+
+  </div><!-- /.page -->
+
+  <!-- Shared utilities: random rotation on data-rotate elements -->
+  <script src="js/main.js"></script>
+</body>
+</html>

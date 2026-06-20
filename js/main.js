@@ -1,2 +1,29 @@
 // Emmylou Rees - main.js
-// Add page-specific behaviour here as needed.
+// Shared utilities loaded on every page that includes this file.
+
+// -------------------------------------------------------
+// Random image rotation utility
+//
+// How to use:
+//   Add data-rotate to any <img> (or other element) you
+//   want to receive a small random tilt on page load.
+//
+//   Example:
+//     <img src="..." data-rotate alt="...">
+//
+//   The element gets a CSS transform: rotate(Xdeg) where X
+//   is always between 3 and 10 degrees, in either direction.
+// -------------------------------------------------------
+function applyRandomRotations() {
+  var elements = document.querySelectorAll('[data-rotate]');
+  elements.forEach(function (el) {
+    // Always 3–10 degrees, randomly positive or negative
+    var magnitude = Math.random() * 7 + 3; // 3–10
+    var sign = Math.random() < 0.5 ? 1 : -1;
+    var deg = (magnitude * sign).toFixed(2);
+    el.style.transform = 'rotate(' + deg + 'deg)';
+  });
+}
+
+// Run once the DOM is ready
+document.addEventListener('DOMContentLoaded', applyRandomRotations);

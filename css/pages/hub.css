@@ -1,0 +1,107 @@
+/* Hub page styles */
+
+/* -------------------------------------------------------
+   Layout
+   Flex row: nav column on the left, portrait on the right.
+   Content anchors to the upper-left with generous padding
+   so it doesn't feel cramped, matching the screenshot.
+------------------------------------------------------- */
+.hub-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5rem 3rem 3rem 5rem;
+  gap: 2rem;
+}
+
+/* -------------------------------------------------------
+   Title
+   "EMMYLOU'S WORLD" hand-lettered image.
+   Sits above the nav/portrait row.
+------------------------------------------------------- */
+.hub-title {
+  display: block;
+  width: clamp(340px, 58vw, 680px);
+  height: auto;
+  margin-bottom: 1.5rem;
+  margin-left: 5rem;
+  margin-top: 1.5rem;
+}
+
+/* -------------------------------------------------------
+   Logo link
+   Wraps the "EMMYLOU'S WORLD" title image so it links back
+   to hub.html and acts as a site logo.
+------------------------------------------------------- */
+.hub-logo {
+  display: block;
+  text-decoration: none;
+}
+
+.hub-logo:hover {
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------------
+   Nav column
+   Stacked list of hand-lettered section links.
+   Each nav item is an image wrapped in an anchor.
+------------------------------------------------------- */
+.hub-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;     /* tight vertical rhythm, matching screenshot */
+}
+
+/* The anchor around each nav image */
+.hub-nav a {
+  display: inline-block;  /* shrink-wrap to image width */
+}
+
+/* Override global a:hover — Emily's hand-lettered art should dim gently */
+.hub-nav a:hover {
+  opacity: 0.85;
+}
+
+/* Each hand-lettered nav word */
+.hub-nav-img {
+  display: block;
+  width: clamp(140px, 24vw, 360px);
+  height: auto;
+}
+
+/* -------------------------------------------------------
+   Portrait
+   Illustrated portrait to the right of the nav list.
+   Sits at the top of the flex row (align-items: flex-start).
+------------------------------------------------------- */
+.hub-portrait {
+  display: block;
+  width: clamp(160px, 26vw, 380px);
+  height: auto;
+  margin-top: 0.25rem;  /* slight nudge so it reads as optically aligned */
+}
+
+/* -------------------------------------------------------
+   Responsive
+   On narrow screens, portrait moves below the nav list
+   so both remain readable.
+------------------------------------------------------- */
+@media (max-width: 500px) {
+  .hub-inner {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hub-title {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .hub-portrait {
+    width: clamp(100px, 45vw, 200px);
+    order: -1;  /* portrait above nav list on narrow screens */
+  }
+}
