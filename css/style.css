@@ -114,3 +114,74 @@ a:hover { opacity: 0.7; }
   cursor: default;               /* image itself is not a close target */
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
 }
+
+/* -------------------------------------------------------
+   Popup overlay
+   Used by: performance page (Jack & Allen, Hole, Jeans Funeral)
+   Usage: add class="popup-trigger" and data-popup="popup-id"
+   to the trigger element. Add a matching <div class="popup-overlay"
+   id="popup-id" hidden> with .popup-inner content inside it.
+   js/popup.js handles open/close behaviour.
+------------------------------------------------------- */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: var(--space-md);
+}
+
+.popup-overlay[hidden] {
+  display: none;
+}
+
+.popup-inner {
+  background: var(--pink);
+  max-width: clamp(280px, 90vw, 520px);
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: var(--space-md);
+  position: relative;
+}
+
+.popup-inner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.popup-text {
+  color: var(--white);
+  font-size: var(--text-base);
+  font-weight: var(--weight-light);
+  margin-top: var(--space-md);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.popup-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.7;
+}
+
+.popup-close:hover {
+  opacity: 1;
+}
+
+.popup-trigger {
+  cursor: pointer;
+}

@@ -80,8 +80,8 @@
         <p class="caption">Fluxus Class, 2025.</p>
       </a>
 
-      <!-- Jack and Allen Play Chess, 2025 — popup trigger (popup.js wired in a later stage) -->
-      <div class="performance-item">
+      <!-- Jack and Allen Play Chess, 2025 — opens popup with image + text -->
+      <div class="performance-item popup-trigger" data-popup="popup-jack-allen" role="button" tabindex="0">
         <img
           src="../assets/images/performance/jack_and_allen.png"
           alt="Jack and Allen Play Chess"
@@ -90,8 +90,8 @@
         <p class="caption">Jack and Allen Play Chess, 2025.</p>
       </div>
 
-      <!-- Hole, 2025 — popup trigger (popup.js wired in a later stage) -->
-      <div class="performance-item">
+      <!-- Hole, 2025 — opens popup with image + text -->
+      <div class="performance-item popup-trigger" data-popup="popup-hole" role="button" tabindex="0">
         <img
           src="../assets/images/performance/hole.jpg"
           alt="Hole"
@@ -100,8 +100,8 @@
         <p class="caption">Hole, 2025.</p>
       </div>
 
-      <!-- Jeans Funeral, 2025 — popup trigger (popup.js wired in a later stage) -->
-      <div class="performance-item">
+      <!-- Jeans Funeral, 2025 — opens popup with image + text -->
+      <div class="performance-item popup-trigger" data-popup="popup-jeans-funeral" role="button" tabindex="0">
         <img
           src="../assets/images/performance/jeans_funeral.jpg"
           alt="Jeans Funeral"
@@ -120,7 +120,35 @@
     <img src="" alt="">
   </div>
 
+  <!-- Popup: Jack and Allen Play Chess -->
+  <div class="popup-overlay" id="popup-jack-allen" hidden role="dialog" aria-modal="true" aria-label="Jack and Allen Play Chess" tabindex="-1">
+    <div class="popup-inner">
+      <button class="popup-close" aria-label="Close">×</button>
+      <img src="../assets/images/performance/jack_and_allen.png" alt="Jack and Allen Play Chess">
+      <p class="popup-text">Jack and Allen are my friend Isabella (Jack) and my (Allen) alter-egos, inspired by Jack Kerouac and Allen Ginsberg. They like to wear ties and play chess in public- no correct moves allowed.</p>
+    </div>
+  </div>
+
+  <!-- Popup: Hole -->
+  <div class="popup-overlay" id="popup-hole" hidden role="dialog" aria-modal="true" aria-label="Hole" tabindex="-1">
+    <div class="popup-inner">
+      <button class="popup-close" aria-label="Close">×</button>
+      <img src="../assets/images/performance/hole.jpg" alt="Hole">
+      <p class="popup-text">I dug a hole in the ground with the help of my friend Aidan. We did it because I wanted to prove to myself that I could dig a hole big enough to fit 100 chickens. I think I can.</p>
+    </div>
+  </div>
+
+  <!-- Popup: Jeans Funeral -->
+  <div class="popup-overlay" id="popup-jeans-funeral" hidden role="dialog" aria-modal="true" aria-label="Jeans Funeral" tabindex="-1">
+    <div class="popup-inner">
+      <button class="popup-close" aria-label="Close">×</button>
+      <img src="../assets/images/performance/jeans_funeral.jpg" alt="Jeans Funeral">
+      <p class="popup-text">I held a funeral for my jeans that became too worn to wear.</p>
+    </div>
+  </div>
+
   <script src="../js/main.js"></script>
   <script src="../js/lightbox.js"></script>
+  <script src="../js/popup.js"></script>
 </body>
 </html>

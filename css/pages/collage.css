@@ -64,7 +64,7 @@
 
 /* Hover: dim slightly to signal clickability, but not so much it degrades the artwork */
 .collage-item:hover {
-  opacity: 0.88;
+  opacity: 0.85;
 }
 
 /* -------------------------------------------------------
