@@ -64,11 +64,11 @@
   opacity: 0.85;
 }
 
-/* Each hand-lettered nav word */
+/* Each hand-lettered nav word — height-controlled so all items match Performance's rendered height */
 .hub-nav-img {
   display: block;
-  width: clamp(140px, 24vw, 360px);
-  height: auto;
+  height: clamp(44px, 5vw, 74px);
+  width: auto;
 }
 
 /* -------------------------------------------------------
@@ -98,6 +98,7 @@
   .hub-title {
     margin-left: 1.5rem;
     margin-top: 1rem;
+    max-width: calc(100% - 3rem); /* fills near-100% on very narrow screens */
   }
 
   .hub-portrait {

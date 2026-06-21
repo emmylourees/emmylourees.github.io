@@ -1,39 +1,6 @@
 /* Collage page styles */
 
 /* -------------------------------------------------------
-   Page header: section title left, site logo centred.
-   Copied from the shared section-page pattern in design-system.md.
-   Logo must be width-constrained — the Emmylou's World image is
-   very wide and overflows if you try to constrain it by height.
-------------------------------------------------------- */
-.page-header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: var(--space-md) var(--space-md) var(--space-sm);
-}
-
-.page-title {
-  height: 120px;
-  width: auto;
-  max-width: 100%;
-  justify-self: start;
-}
-
-.site-logo-link {
-  display: block;
-}
-
-.site-logo-link img {
-  width: clamp(400px, 44vw, 760px);
-  height: auto;
-}
-
-.site-logo-link:hover {
-  opacity: 0.85;
-}
-
-/* -------------------------------------------------------
    Collage gallery
    2x2 grid with generous sizing so each image feels large.
    Images are intentionally offset with margin nudges to
@@ -62,7 +29,7 @@
   cursor: zoom-in;
 }
 
-/* Hover: dim slightly to signal clickability, but not so much it degrades the artwork */
+/* Hover: dim slightly to signal clickability */
 .collage-item:hover {
   opacity: 0.85;
 }
@@ -90,18 +57,9 @@
 
 /* -------------------------------------------------------
    Responsive: single column on smaller screens.
-   Offsets are removed at that point — stacked layout
-   doesn't need the scatter treatment.
+   Offsets are removed at that point.
 ------------------------------------------------------- */
 @media (max-width: 700px) {
-  .page-header {
-    padding: var(--space-sm);
-  }
-
-  .page-title {
-    height: 60px;
-  }
-
   .collage-gallery {
     grid-template-columns: 1fr;
     padding: var(--space-sm) var(--space-md) var(--space-lg);

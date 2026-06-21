@@ -174,7 +174,7 @@ a:hover { opacity: 0.7; }
   font-size: 1.5rem;
   cursor: pointer;
   line-height: 1;
-  padding: 0.25rem 0.5rem;
+  padding: 0.75rem 1rem;
   opacity: 0.7;
 }
 
@@ -184,4 +184,74 @@ a:hover { opacity: 0.7; }
 
 .popup-trigger {
   cursor: pointer;
+}
+
+/* -------------------------------------------------------
+   Section page header
+   Used by: about, collage, performance, posters, fluxus-class.
+   Three-column grid: section title left, site logo centred,
+   empty right column for balance. Collapses to a flex column
+   on smaller screens (logo on top, title below).
+------------------------------------------------------- */
+
+.page-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+}
+
+.page-title {
+  height: clamp(44px, 4.8vw, 83px); /* 75% of logo rendered height */
+  width: auto;
+  max-width: 100%;
+  justify-self: start;
+}
+
+.site-logo-link {
+  display: block;
+}
+
+.site-logo-link img {
+  width: clamp(400px, 44vw, 760px);
+  height: auto;
+}
+
+.site-logo-link:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  /* Stack header: logo on top, title below */
+  .page-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .site-logo-link {
+    order: 1;
+  }
+
+  .site-logo-link img {
+    width: clamp(200px, 85vw, 400px);
+  }
+
+  /* Title at 75% of mobile logo height */
+  .page-title {
+    order: 2;
+    height: clamp(22px, 9.3vw, 44px);
+  }
+
+  /* Hide the grid-balancing spacer */
+  .page-header > div:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-header {
+    padding: var(--space-sm);
+  }
 }

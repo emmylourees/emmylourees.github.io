@@ -1,21 +1,8 @@
 /* Fluxus Class sub-page styles */
 
-/* Same 3-column header as all section pages */
-.page-header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: var(--space-md) var(--space-md) var(--space-sm);
-}
-
+/* Wraps the title image and back-link in the left header column */
 .page-title-group {
   justify-self: start;
-}
-
-.page-title {
-  height: 120px;
-  width: auto;
-  max-width: 100%;
 }
 
 .back-link {
@@ -29,19 +16,6 @@
 
 .back-link:hover {
   opacity: 1;
-}
-
-.site-logo-link {
-  display: block;
-}
-
-.site-logo-link img {
-  width: clamp(400px, 44vw, 760px);
-  height: auto;
-}
-
-.site-logo-link:hover {
-  opacity: 0.85;
 }
 
 /* Outer wrapper: image grid left, description text right, text vertically centred */
@@ -76,16 +50,33 @@
   line-height: 1.6;
 }
 
-/* Mobile: single column, description above images */
+@media (max-width: 900px) {
+  /* Title group (title img + back-link) stacks below logo on mobile */
+  .page-title-group {
+    order: 2;
+    text-align: center;
+  }
+
+  /* Stack image grid above description; switch images to fluid width */
+  .fluxus-content {
+    grid-template-columns: 1fr;
+  }
+
+  .fluxus-description {
+    width: auto;
+  }
+
+  .fluxus-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .fluxus-images img {
+    height: auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 700px) {
-  .page-header {
-    padding: var(--space-sm);
-  }
-
-  .page-title {
-    height: 60px;
-  }
-
   .fluxus-content {
     grid-template-columns: 1fr;
     gap: var(--space-md);

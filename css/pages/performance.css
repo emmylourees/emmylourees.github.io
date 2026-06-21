@@ -1,37 +1,6 @@
 /* Performance page styles */
 
 /* -------------------------------------------------------
-   Page header: section title left, site logo centred.
-   Same 3-column grid pattern used on all section pages.
-------------------------------------------------------- */
-.page-header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  padding: var(--space-md) var(--space-md) var(--space-sm);
-}
-
-.page-title {
-  height: 120px;
-  width: auto;
-  max-width: 100%;
-  justify-self: start;
-}
-
-.site-logo-link {
-  display: block;
-}
-
-.site-logo-link img {
-  width: clamp(400px, 44vw, 760px);
-  height: auto;
-}
-
-.site-logo-link:hover {
-  opacity: 0.85;
-}
-
-/* -------------------------------------------------------
    Performance works grid
    Two columns; align-items: start so images of different
    heights don't force each row cell to stretch.
@@ -75,14 +44,6 @@ a.performance-item.lightbox-trigger img {
    Responsive: single column on narrow screens
 ------------------------------------------------------- */
 @media (max-width: 700px) {
-  .page-header {
-    padding: var(--space-sm);
-  }
-
-  .page-title {
-    height: 60px;
-  }
-
   .performance-grid {
     grid-template-columns: 1fr;
     padding: var(--space-sm) var(--space-md) var(--space-lg);
