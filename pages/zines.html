@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Zines — Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Zines page styles -->
+  <link rel="stylesheet" href="../css/pages/zines.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Page header: section title left, site logo centre, right column empty to keep logo truly centred -->
+    <div class="page-header">
+      <img
+        src="../assets/images/hub/nav_zines.png"
+        class="page-title"
+        alt="Zines"
+      >
+      <a href="../hub.html" class="site-logo-link" aria-label="Back to Emmylou's World">
+        <img
+          src="../assets/images/hub/emmylous_world_logo.png"
+          alt="Emmylou's World"
+        >
+      </a>
+      <!-- Right column intentionally empty to balance the 3-column header grid -->
+      <div></div>
+    </div>
+
+    <!-- Zines content: Love Declaration Press label on left, 3×2 grid on right -->
+    <div class="zines-layout">
+
+      <!-- Love Declaration Press — Emily's publishing imprint, not a section heading -->
+      <div class="zines-ldp">
+        <img
+          src="../assets/images/zines/love_declaration_press.png"
+          alt="Love Declaration Press"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- 3×2 grid: 5 covers + daily zines at position (3,2) -->
+      <div class="zines-grid">
+
+        <img src="../assets/images/zines/mine_is_mine.png"
+          alt="Mine is Mine"
+          class="zine-cover"
+          loading="lazy">
+
+        <img src="../assets/images/zines/everything_you_want.png"
+          alt="Everything You Want / Nothing That You Have"
+          class="zine-cover"
+          loading="lazy">
+
+        <img src="../assets/images/zines/lonely_sailor.png"
+          alt="I once was a very lonely sailor"
+          class="zine-cover"
+          loading="lazy">
+
+        <img src="../assets/images/zines/growing_pains.png"
+          alt="Growing Pains"
+          class="zine-cover"
+          loading="lazy">
+
+        <img src="../assets/images/zines/growing_pains_2.png"
+          alt="Growing Pains II"
+          class="zine-cover"
+          loading="lazy">
+
+        <!-- Daily Zines at (3,2) — click opens popup -->
+        <div class="popup-trigger zine-daily-trigger" data-popup="daily-zines-popup" tabindex="0" role="button" aria-label="View Daily Zines">
+          <img
+            src="../assets/images/zines/daily_zines.png"
+            alt="Daily Zines"
+            class="zine-daily"
+            data-rotate
+            loading="lazy"
+          >
+        </div>
+
+      </div><!-- /.zines-grid -->
+
+    </div><!-- /.zines-layout -->
+
+  </div><!-- /.page -->
+
+  <!-- Daily Zines popup -->
+  <div class="popup-overlay popup-overlay--daily" id="daily-zines-popup" hidden role="dialog" aria-modal="true" tabindex="-1">
+    <div class="popup-inner">
+      <button class="popup-close" aria-label="Close">×</button>
+      <img src="../assets/images/zines/daily_zines.png" alt="Daily Zines">
+      <p class="popup-text">Daily Zine<br>July 1st – Present</p>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/popup.js"></script>
+
+  <!-- Paired rotation: row 1 — (1,1)&(3,1) same direction, (2,1) opposite; row 2 — (1,2)&(2,2) opposite; (3,2) daily zines is random via data-rotate -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var covers = document.querySelectorAll('.zines-grid .zine-cover');
+      function randDeg() { return (Math.random() * 4 + 3).toFixed(2); }
+
+      var signA = Math.random() < 0.5 ? 1 : -1;
+      covers[0].style.transform = 'rotate(' + (signA * randDeg()) + 'deg)';
+      covers[1].style.transform = 'rotate(' + (-signA * randDeg()) + 'deg)';
+      covers[2].style.transform = 'rotate(' + (signA * randDeg()) + 'deg)';
+
+      var signB = Math.random() < 0.5 ? 1 : -1;
+      covers[3].style.transform = 'rotate(' + (signB * randDeg()) + 'deg)';
+      covers[4].style.transform = 'rotate(' + (-signB * randDeg()) + 'deg)';
+    });
+  </script>
+</body>
+</html>

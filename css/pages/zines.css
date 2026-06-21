@@ -1,0 +1,106 @@
+/* Zines page styles */
+
+/* -------------------------------------------------------
+   Main layout: LDP label on the left, 3×2 grid on the right.
+   Left-aligned (no auto margin) so extra space falls on the
+   right — as if there's an invisible 4th column there.
+------------------------------------------------------- */
+.zines-layout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
+  margin: 0 0 0 0;
+}
+
+/* -------------------------------------------------------
+   Love Declaration Press imprint label — twice original size
+------------------------------------------------------- */
+.zines-ldp {
+  flex-shrink: 0;
+}
+
+.zines-ldp img {
+  width: clamp(200px, 15vw, 390px);
+  height: auto;
+  display: block;
+}
+
+/* -------------------------------------------------------
+   3×2 grid: 5 covers + daily zines at (3,2).
+   column-gap is larger than row-gap for breathing room.
+------------------------------------------------------- */
+.zines-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: var(--space-lg);
+  row-gap: var(--space-md);
+  flex: 1;
+  max-width: clamp(500px, 37vw, 950px);
+}
+
+/* White paper sitting on the pink surface */
+.zine-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--shadow-card);
+}
+
+/* Daily Zines trigger — scaled 2× from top-left, overflows into the empty right space */
+.zine-daily-trigger {
+  display: block;
+  transform: scale(2);
+  transform-origin: top left;
+}
+
+.zine-daily-trigger:hover {
+  opacity: 0.85;
+}
+
+/* Clip scale overflow on both axes to prevent extra scroll space */
+.page {
+  overflow: clip;
+}
+
+.zine-daily {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* -------------------------------------------------------
+   Daily Zines popup — wider inner panel for comfortable viewing
+------------------------------------------------------- */
+.popup-overlay--daily .popup-inner {
+  max-width: clamp(320px, 80vw, 760px);
+}
+
+/* -------------------------------------------------------
+   Mobile: stack at header breakpoint
+------------------------------------------------------- */
+@media (max-width: 900px) {
+  .zines-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-md) var(--space-lg);
+  }
+
+  .zines-ldp img {
+    width: clamp(120px, 35vw, 200px);
+  }
+
+  /* No empty right space on mobile — show daily zines at normal grid-cell size */
+  .zine-daily-trigger {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .zines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--space-md);
+    row-gap: var(--space-sm);
+  }
+}
