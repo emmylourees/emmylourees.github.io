@@ -85,7 +85,10 @@
 
   <!-- Lightbox overlay — hidden until a poster is clicked -->
   <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
-    <img src="" alt="">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" aria-label="Close">×</button>
+      <img src="" alt="">
+    </div>
   </div>
 
   <!-- Lightbox open/close logic -->

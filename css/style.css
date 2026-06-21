@@ -109,13 +109,38 @@ a:hover { opacity: 0.7; }
   display: flex;
 }
 
-.lightbox-overlay img {
+.lightbox-inner {
+  position: relative;
+  display: inline-block;
+}
+
+.lightbox-inner img {
   /* Image fills most of the viewport but never overflows */
   max-width:  90vw;
   max-height: 90vh;
   object-fit: contain;
   cursor: default;               /* image itself is not a close target */
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: var(--text-lg);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  opacity: 0.7;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
 }
 
 /* -------------------------------------------------------

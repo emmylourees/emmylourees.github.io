@@ -12,6 +12,7 @@
     if (!overlay) return; // no overlay on this page, do nothing
 
     var overlayImg = overlay.querySelector('img');
+    var closeBtn = overlay.querySelector('.lightbox-close');
 
     // --- Open ---
     // Find every element marked as a lightbox trigger
@@ -35,6 +36,14 @@
         overlay.focus();
       });
     });
+
+    // --- Close: X button ---
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        closeOverlay();
+      });
+    }
 
     // --- Close: click the backdrop (but not the image itself) ---
     overlay.addEventListener('click', function (e) {

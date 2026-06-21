@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Pink URL bar on mobile -->
+  <meta name="theme-color" content="#c8a4cc">
+
+  <title>Music — Emmylou's World</title>
+
+  <!-- Shared design system -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Music page styles -->
+  <link rel="stylesheet" href="../css/pages/music.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Page header: section title left, site logo centre, right column empty to keep logo truly centred -->
+    <div class="page-header">
+      <img
+        src="../assets/images/hub/nav_music.png"
+        class="page-title"
+        alt="Music"
+      >
+      <a href="../hub.html" class="site-logo-link" aria-label="Back to Emmylou's World">
+        <img
+          src="../assets/images/hub/emmylous_world_logo.png"
+          alt="Emmylou's World"
+        >
+      </a>
+      <!-- Right column intentionally empty to balance the 3-column header grid -->
+      <div></div>
+    </div>
+
+    <!--
+      Song grid: 4 columns × 3 rows.
+      Songs are ordered by release date. Slots (2,2) and (3,2) are reserved
+      for the Bandcamp link — the .music-bandcamp div is explicitly placed there.
+
+      Grid positions:
+        (1,1) Butterscotch & Clove   (2,1) Astral Plane
+        (3,1) Songs About Rats       (4,1) Of Use
+        (1,2) Bad Bad Man            (2,2)+(3,2) [bandcamp text]   (4,2) God Is Good
+        (1,3) Cause I'm In Love      (2,3) Fake Crochet Flowers    (3,3) Sprite and Fanta
+        (4,3) [empty]
+    -->
+    <main class="music-grid">
+
+      <!-- Row 1 -->
+      <a href="https://emmylourees.bandcamp.com/track/butterscoth-clove"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: 8px">
+        <img src="../assets/images/music/butterscotch_and_clove.jpg"
+             alt="Butterscotch &amp; Clove"
+             loading="lazy">
+        <div class="music-label">Butterscotch &amp; Clove</div>
+      </a>
+
+      <a href="https://emmylourees.bandcamp.com/album/astral-plane"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: -6px">
+        <img src="../assets/images/music/astral_plane.jpg"
+             alt="Astral Plane"
+             loading="lazy">
+        <div class="music-label">Astral Plane</div>
+      </a>
+
+      <a href="https://emmylourees.bandcamp.com/album/songs-about-rats-etc"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: 14px">
+        <img src="../assets/images/music/songs_about_rats.jpg"
+             alt="Songs About Rats, etc..."
+             loading="lazy">
+        <div class="music-label">Songs About Rats, etc...</div>
+      </a>
+
+      <a href="https://emmylourees.bandcamp.com/track/of-use"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: -4px">
+        <img src="../assets/images/music/of_use.jpg"
+             alt="Of Use"
+             loading="lazy">
+        <div class="music-label">Of Use</div>
+      </a>
+
+      <!-- Row 2 -->
+      <a href="https://emmylourees.bandcamp.com/track/bad-bad-man"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: 10px">
+        <img src="../assets/images/music/bad_bad_man.jpg"
+             alt="Bad Bad Man"
+             loading="lazy">
+        <div class="music-label">Bad Bad Man</div>
+      </a>
+
+      <!-- Bandcamp link: spans columns 2–3, row 2 -->
+      <div class="music-bandcamp">
+        <div class="music-bandcamp-inner">
+          <p>Link to my music:</p>
+          <a href="https://emmylourees.bandcamp.com" target="_blank" rel="noopener noreferrer">
+            https://emmylourees.bandcamp.com
+          </a>
+        </div>
+      </div>
+
+      <a href="https://emmylourees.bandcamp.com/track/god-is-good"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: -8px">
+        <img src="../assets/images/music/god_is_good.jpg"
+             alt="God Is Good"
+             loading="lazy">
+        <div class="music-label">God Is Good</div>
+      </a>
+
+      <!-- Row 3 — column 4 is naturally empty -->
+      <a href="https://emmylourees.bandcamp.com/track/cause-im-in-love-with-you"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: 6px">
+        <img src="../assets/images/music/cause_im_in_love_with_you.jpg"
+             alt="Cause I'm In Love With You"
+             loading="lazy">
+        <div class="music-label">Cause I'm In Love With You</div>
+      </a>
+
+      <a href="https://emmylourees.bandcamp.com/track/fake-crochet-flowers"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: -12px">
+        <img src="../assets/images/music/fake_crochet_flowers.jpg"
+             alt="Fake Crochet Flowers"
+             loading="lazy">
+        <div class="music-label">Fake Crochet Flowers</div>
+      </a>
+
+      <a href="https://emmylourees.bandcamp.com/track/sprite-and-fanta"
+         class="music-item" data-rotate target="_blank" rel="noopener noreferrer"
+         style="--nudge: 4px">
+        <img src="../assets/images/music/sprite_and_fanta.jpg"
+             alt="Sprite and Fanta"
+             loading="lazy">
+        <div class="music-label">Sprite and Fanta</div>
+      </a>
+
+    </main>
+
+  </div><!-- /.page -->
+
+  <script src="../js/main.js"></script>
+
+  <!-- Scatter each song card to a random horizontal position within its grid cell.
+       Keeps a 15px buffer from each cell edge so cards never crowd the gap between columns. -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.innerWidth <= 900) return;
+
+      var grid = document.querySelector('.music-grid');
+      var items = grid.querySelectorAll('.music-item');
+      var gridStyle = getComputedStyle(grid);
+      var innerWidth = grid.clientWidth
+        - parseFloat(gridStyle.paddingLeft)
+        - parseFloat(gridStyle.paddingRight);
+      var colGap = parseFloat(gridStyle.columnGap) || 32;
+      var cellWidth = (innerWidth - colGap * 3) / 4;
+      var minPad = 15;
+
+      items.forEach(function (item) {
+        var range = cellWidth - item.offsetWidth - minPad * 2;
+        if (range > 0) {
+          item.style.marginLeft = (minPad + Math.random() * range) + 'px';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* Music page styles */
+
+/* -------------------------------------------------------
+   4-column song grid.
+   Songs are ordered by release date. The .music-bandcamp
+   text block is explicitly placed at columns 2-3, row 2.
+   Column 4 of row 3 is naturally empty.
+------------------------------------------------------- */
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-xl) var(--space-xl);
+  align-items: start;
+  justify-items: start; /* JS scatter script controls horizontal position within each cell */
+}
+
+/* -------------------------------------------------------
+   Each song: a linked card (image + label that rotate together).
+   --nudge shifts the card vertically within its cell for scatter.
+   data-rotate on the element applies a 3-7° random tilt via main.js.
+------------------------------------------------------- */
+.music-item {
+  display: block;
+  text-decoration: none;
+  margin-top: var(--nudge, 0px);
+  width: clamp(160px, 11vw, 220px); /* small card that scales with viewport */
+}
+
+.music-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Song title label — approximates Bandcamp's light-blue-grey strip.
+   Colors sampled visually from the Bandcamp page: adjust if needed.
+   Background: #e8f4f8 / Text: #1d96c9 */
+.music-label {
+  background: #e8f4f8;
+  color: #1d96c9;
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: var(--text-sm);
+  padding: 4px 8px;
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------
+   Bandcamp link block — spans columns 2-3, row 2.
+   Centred vertically and horizontally within that 2-cell area.
+------------------------------------------------------- */
+.music-bandcamp {
+  grid-column: 2 / 4;
+  grid-row: 2;
+  justify-self: stretch; /* override grid's justify-items: center */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* centres the inner group horizontally */
+  font-family: var(--font-body);
+  font-weight: var(--weight-light);
+  font-size: calc(var(--text-base) * 2); /* 3rem */
+  line-height: 1.6;
+}
+
+/* Inner wrapper: left-aligns the two lines with each other */
+.music-bandcamp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.music-bandcamp p {
+  color: var(--black);
+  margin: 0 0 0.75em 0; /* extra gap before the link */
+}
+
+/* Classic internet link style — blue, underlined */
+.music-bandcamp a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+/* Prevent rotation-caused scroll space */
+.page {
+  overflow: clip;
+}
+
+/* -------------------------------------------------------
+   Mobile: 2-column grid. Cards fill their cells.
+   Bandcamp link spans full width and moves to the end.
+   Nudges, explicit grid placement, and scatter JS all reset.
+------------------------------------------------------- */
+@media (max-width: 900px) {
+  .music-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 4px var(--space-sm) var(--space-lg);
+    gap: var(--space-sm);
+    justify-items: stretch;
+  }
+
+  .music-item {
+    --nudge: 0px;
+    width: 100%;
+  }
+
+  .music-bandcamp {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    order: -1; /* floats to the top on mobile */
+    align-items: flex-start;
+    padding: 0 0 var(--space-sm);
+    font-size: var(--text-sm); /* 1rem — half the mobile size */
+  }
+
+  .music-bandcamp p {
+    margin-bottom: 0;
+  }
+}
