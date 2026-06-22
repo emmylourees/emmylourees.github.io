@@ -27,7 +27,7 @@
 }
 
 .performance-item .caption {
-  margin-top: 0.5rem;
+  margin-top: calc(var(--space-sm) * 0.5);
 }
 
 /* Clickable works: dim slightly on hover without degrading the image */

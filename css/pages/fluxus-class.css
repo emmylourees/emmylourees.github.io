@@ -7,7 +7,7 @@
 
 .back-link {
   display: block;
-  margin-top: 0.5rem;
+  margin-top: calc(var(--space-sm) * 0.5);
   font-size: var(--text-lg);
   font-weight: var(--weight-light);
   color: var(--white);
@@ -36,14 +36,14 @@
 }
 
 .fluxus-images img {
-  height: 368px;
+  height: clamp(160px, 20vw, 368px);
   width: auto;
   display: block;
 }
 
 /* Description sits to the right, vertically centred alongside the image grid */
 .fluxus-description {
-  width: 200px;
+  width: clamp(160px, 14vw, 200px);
   color: var(--white);
   font-size: var(--text-base);
   font-weight: var(--weight-light);
