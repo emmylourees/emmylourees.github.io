@@ -95,7 +95,7 @@
 @media (max-width: 900px) {
   .music-grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 4px var(--space-sm) var(--space-lg);
+    padding: var(--space-sm) var(--space-sm) var(--space-lg);
     gap: var(--space-sm);
     justify-items: stretch;
   }

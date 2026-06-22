@@ -1,5 +1,10 @@
 /* Collage page styles */
 
+/* Prevent rotation-caused scroll space */
+.page {
+  overflow: clip;
+}
+
 /* -------------------------------------------------------
    Collage gallery
    2x2 grid with generous sizing so each image feels large.
@@ -39,10 +44,6 @@
    break the perfect grid alignment, referencing the loose
    placement of the original site.
 ------------------------------------------------------- */
-.collage-item:nth-child(1) {
-  margin-top: 0;
-}
-
 .collage-item:nth-child(2) {
   margin-top: var(--space-lg); /* pushed down relative to item 1 */
 }

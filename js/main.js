@@ -1,5 +1,7 @@
 // Emmylou Rees - main.js
 // Shared utilities loaded on every page that includes this file.
+// Some pages include this script even if they have no data-rotate elements yet,
+// so it's ready to go if rotations are added later.
 
 // -------------------------------------------------------
 // Random image rotation utility

@@ -1,4 +1,4 @@
-/* Popup overlay — Jack & Allen, Hole, Jeans Funeral on performance.html */
+/* Popup overlay — performance.html (Jack & Allen, Hole, Jeans Funeral) and zines.html (Daily Zines) */
 
 document.addEventListener('DOMContentLoaded', function () {
   var triggers = document.querySelectorAll('.popup-trigger');
